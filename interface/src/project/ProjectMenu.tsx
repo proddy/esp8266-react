@@ -6,6 +6,9 @@ import SettingsRemoteIcon from '@material-ui/icons/SettingsRemote';
 
 import { PROJECT_PATH } from '../api';
 
+import { t } from "@lingui/macro"
+import { I18n } from "@lingui/react";
+
 class ProjectMenu extends Component<RouteComponentProps> {
 
   render() {
@@ -16,7 +19,13 @@ class ProjectMenu extends Component<RouteComponentProps> {
           <ListItemIcon>
             <SettingsRemoteIcon />
           </ListItemIcon>
-          <ListItemText primary="Demo Project" />
+
+          <I18n>
+            {({ i18n }) => (
+              <ListItemText primary={i18n._(t`demo_project`)} />
+            )}
+          </I18n>
+
         </ListItem>
       </List>
     )

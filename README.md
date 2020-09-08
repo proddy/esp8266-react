@@ -1,5 +1,21 @@
 # ESP8266 React
 
+lingui install:
+
+* `cd interface`
+* `npm install --save-dev @babel/core @lingui/cli @lingui/macro babel-core@bridge`
+* `npm install --save @lingui/react`
+* create a `.linguirc`
+* adjust `package.json` under scripts
+* `npm run add-locale en de`
+* `npm run extract`
+* edit the translations in the .po files
+* `npm run compile`
+* build esp8266-react
+
+
+----
+
 [![Build Status](https://travis-ci.org/rjwats/esp8266-react.svg?branch=master)](https://travis-ci.org/rjwats/esp8266-react)
 
 A simple, secure and extensible framework for IoT projects built on ESP8266/ESP32 platforms with responsive [React](https://reactjs.org/) front-end built with [Material-UI](https://material-ui.com/).

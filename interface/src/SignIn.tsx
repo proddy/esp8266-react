@@ -10,6 +10,8 @@ import { withAuthenticationContext, AuthenticationContextProps } from './authent
 import {PasswordValidator} from './components';
 import { PROJECT_NAME, SIGN_IN_ENDPOINT } from './api';
 
+import LanguageSelector from './LanguageSelector';
+
 const styles = (theme: Theme) => createStyles({
   signInPage: {
     display: "flex",
@@ -103,6 +105,16 @@ class SignIn extends Component<SignInProps, SignInState> {
       <div className={classes.signInPage}>
         <Paper className={classes.signInPanel}>
           <Typography variant="h4">{PROJECT_NAME}</Typography>
+
+          <div className="column is-narrow">
+              <LanguageSelector
+                // language={language}
+                // onChangeLanguage={onLanguageChange}
+                language="en"
+                onChangeLanguage={this}
+              />
+            </div>
+
           <ValidatorForm onSubmit={this.onSubmit}>
             <TextValidator
               disabled={processing}
